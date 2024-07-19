@@ -93,10 +93,12 @@ def main():
 
     # Ask user for grid size
     grid_size = int(input("Enter the size of the grid (e.g., 10 for a 10x10 grid): "))
+    # Ask user for number of words per SVG
+    words_per_svg = int(input("Enter the number of words per SVG: "))
 
-    # Divide words into chunks of 10
-    for i in range(0, len(words), 10):
-        chunk_words = words[i:i + 10]
+    # Divide words into chunks of the specified size
+    for i in range(0, len(words), words_per_svg):
+        chunk_words = words[i:i + words_per_svg]
 
         grid = create_empty_grid(grid_size)
         solution_grid = create_empty_grid(grid_size)
@@ -118,8 +120,8 @@ def main():
 
         fill_random_letters(grid)
 
-        game_output_file = f'word_search_game_{i // 10 + 1}.svg'
-        solution_output_file = f'word_search_solution_{i // 10 + 1}.svg'
+        game_output_file = f'word_search_game_{i // words_per_svg + 1}.svg'
+        solution_output_file = f'word_search_solution_{i // words_per_svg + 1}.svg'
         create_svg(grid, chunk_words, grid_size, game_output_file)
         create_solution_svg(solution_grid, grid_size, solution_output_file)
 
