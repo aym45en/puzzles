@@ -49,12 +49,18 @@ def fill_random_letters(grid):
 # Function to create SVG of the grid with words
 def create_svg(grid, words, grid_size, output_file):
     cell_size = 40
-    font_size = 20
+    font_size = 35
     grid_size_pixels = grid_size * cell_size
     word_area_height = len(words) * (font_size + 5) + 20
 
     dwg = svgwrite.Drawing(output_file, size=(grid_size_pixels, grid_size_pixels + word_area_height))
-    dwg.add(dwg.rect(insert=(0, 0), size=(grid_size_pixels, grid_size_pixels), fill='white'))
+    
+    # Add a border around the SVG
+    border_width = 2
+    border_color = 'black'
+    
+    dwg.add(dwg.rect(insert=(0, 0), size=(grid_size_pixels, grid_size_pixels), 
+                      fill='white', stroke=border_color, stroke_width=border_width))
 
     # Add text elements for grid letters
     for row in range(grid_size):
@@ -63,10 +69,22 @@ def create_svg(grid, words, grid_size, output_file):
             dwg.add(dwg.text(grid[row][col], insert=(x + 10, y + 30), font_size=font_size, font_family='Arial'))
 
     # Add text elements for words below the grid
-    y_offset = grid_size_pixels + 20
+    y_offset = grid_size_pixels + 50
+    x_offset = 20
+    col_max = 0
+    word_max = 0
     for word in words:
-        dwg.add(dwg.text(word, insert=(10, y_offset), font_size=font_size, font_family='Arial'))
+        dwg.add(dwg.text(word, insert=(x_offset, y_offset), font_size=font_size, font_family='Arial'))
         y_offset += font_size + 5
+        col_max += 1
+
+        if word_max < len(word) :
+            word_max = len(word)
+
+        if col_max >= 7 :
+            y_offset = grid_size_pixels + 50
+            x_offset += word_max * (font_size * 0.65) + 100  # Adjust spacing between words
+            col_max = 0
 
     dwg.save()
 
@@ -77,8 +95,12 @@ def create_solution_svg(solution_grid, grid_size, output_file):
     grid_size_pixels = grid_size * cell_size
 
     dwg = svgwrite.Drawing(output_file, size=(grid_size_pixels, grid_size_pixels))
-    dwg.add(dwg.rect(insert=(0, 0), size=(grid_size_pixels, grid_size_pixels), fill='white'))
-
+    
+    # Add a border around the SVG
+    border_width = 2
+    border_color = 'black'
+    dwg.add(dwg.rect(insert=(0, 0), size=(grid_size_pixels, grid_size_pixels), fill='white',stroke=border_color, stroke_width=border_width))
+    
     # Add text elements for solution grid letters
     for row in range(grid_size):
         for col in range(grid_size):
