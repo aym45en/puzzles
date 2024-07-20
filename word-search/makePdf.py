@@ -1,34 +1,36 @@
 import os
+import subprocess
+
+from PyPDF2 import PdfMerger
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from svglib.svglib import svg2rlg
 from reportlab.graphics import renderPDF
 from reportlab.lib.units import inch, mm
 
-def create_pdf_from_svgs(output_filename):
+def run_word_maker():
+    # Run the word_maker.py script
+    subprocess.run(["python3", "word_maker.py"], check=True)
+
+def create_pdf_from_svgs(svg_files, output_filename):
     # Set up the PDF canvas
     c = canvas.Canvas(output_filename, pagesize=letter)
     width, height = letter
 
-    # Desired size for SVG in inches
-    desired_width_inch = 10
-    desired_height_inch = 13
-
-    # Convert desired size to points (1 inch = 72 points)
-    desired_width = desired_width_inch * 72
-    desired_height = desired_height_inch * 72
-
-    # Directory containing SVG files
-    svg_dir = "."
-
-    # Get all SVG files in the current directory
-    svg_files = sorted([f for f in os.listdir(svg_dir) if f.lower().endswith('.svg')])
 
     for svg_file in svg_files:
+        # Desired size for SVG in inches
+        # Convert desired size to points (1 inch = 72 points)
+        if 'solution' in svg_file:
+            desired_width = 7 * 72
+            desired_height = 10 * 72
+        else:
+            desired_width = 10 * 72
+            desired_height = 13 * 72
         # Read SVG file and convert to ReportLab drawing
-        svg_path = os.path.join(svg_dir, svg_file)
+        svg_path = os.path.join(".", svg_file)
         drawing = svg2rlg(svg_path)
-        
+
         # Calculate the scaling factor to fit SVG to desired size
         drawing_width = drawing.width
         drawing_height = drawing.height
@@ -46,7 +48,10 @@ def create_pdf_from_svgs(output_filename):
         y = (height - drawing.height) / 2
 
         # Draw the SVG onto the canvas
-        renderPDF.draw(drawing, c, x, -200)
+        if 'solution' in svg_file:
+            renderPDF.draw(drawing, c, x, 200)
+        else:
+            renderPDF.draw(drawing, c, x, -200)
 
         # Finish the page
         c.showPage()
@@ -54,5 +59,33 @@ def create_pdf_from_svgs(output_filename):
     # Save the PDF
     c.save()
 
-# Create the PDF
-create_pdf_from_svgs("output.pdf")
+def merge_pdfs(input_files, output_filename):
+    merger = PdfMerger()
+    for pdf in input_files:
+        merger.append(pdf)
+    merger.write(output_filename)
+    merger.close()
+
+# rm all svg
+
+for f in os.listdir("."):
+    if f.endswith('.svg'):
+        path=os.path.join(".",f)
+        os.remove(path)
+
+# Run the word_maker.py script
+run_word_maker()
+
+# Get all SVG files in the current directory
+svg_files = sorted([f for f in os.listdir(".") if f.lower().endswith('.svg')])
+
+# Separate game and solution SVGs
+game_svgs = [f for f in svg_files if 'game' in f]
+solution_svgs = [f for f in svg_files if 'solution' in f]
+
+# Create the game and solution PDFs
+create_pdf_from_svgs(game_svgs, "games.pdf")
+create_pdf_from_svgs(solution_svgs, "solutions.pdf")
+
+# Merge the two PDFs into one
+merge_pdfs(["games.pdf", "solutions.pdf"], "output.pdf")

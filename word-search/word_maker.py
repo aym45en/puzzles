@@ -83,7 +83,7 @@ def create_svg(grid, words, grid_size, output_file):
 
         if col_max >= 7 :
             y_offset = grid_size_pixels + 50
-            x_offset += word_max * (font_size * 0.65) + 100  # Adjust spacing between words
+            x_offset += word_max * (font_size * 0.65) + 50  # Adjust spacing between words
             col_max = 0
 
     dwg.save()
