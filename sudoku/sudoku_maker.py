@@ -35,7 +35,7 @@ def create_grid(size):
                                     num_cells_to_fill -= 1
                                     num_numbers_to_have += 1
                                     break
-        if num_numbers_to_have > 25 :
+        if num_numbers_to_have > 24 :
             break
     return grid
 
@@ -73,7 +73,7 @@ def create_svg(grid, grid_size, output_file):
     for row in range(grid_size):
         for col in range(grid_size):
             x, y = col * cell_size, row * cell_size
-            text = dwg.text(grid[row][col], insert=(x + 10, y + 30), font_size=font_size, font_family='Arial')
+            dwg.add(dwg.text(grid[row][col], insert=(x + 10, y + 30), font_size=font_size, font_family='Arial'))
 
             if ( row == 3 or row == 6 ) :
                 dwg.add(dwg.line(start=(x, y), end=(x + cell_size, y), stroke='black', stroke_width=3))
@@ -86,7 +86,6 @@ def create_svg(grid, grid_size, output_file):
             # Bottom border
             dwg.add(dwg.line(start=(x, y + cell_size), end=(x + cell_size, y + cell_size), stroke='black', stroke_width=1))
 
-            dwg.add(text)
     dwg.save()
 
 # Function to create SVG of the solution grid
@@ -100,7 +99,9 @@ def create_solution_svg(solution_grid, grid_size, output_file):
     # Add a border around the SVG
     border_width = 2
     border_color = 'black'
-    dwg.add(dwg.rect(insert=(0, 0), size=(grid_size_pixels, grid_size_pixels), fill='white',stroke=border_color, stroke_width=border_width))
+
+    dwg.add(dwg.rect(insert=(0, 0), size=(grid_size_pixels, grid_size_pixels),
+                     fill='white',stroke=border_color, stroke_width=border_width))
     
     # Add text elements for solution grid letters
     for row in range(grid_size):
@@ -136,7 +137,7 @@ def main():
     number_puzzles = args.number_puzzles
     
     attempt, successful_attempt= 0, 0
-    while successful_attempt <= number_puzzles:
+    while successful_attempt < number_puzzles:
         grid = create_grid(9)
         copy_grid = copy.deepcopy(grid)
         grid_solved = solved_grid(copy_grid)

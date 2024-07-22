@@ -35,12 +35,7 @@ def run_puzzle_maker(puzzle_type, number_puzzles, word_search_size=None, word_pe
 
     subprocess.run(["python", script_path] + args, check=True)
 
-    # rm all svg
-    puzzle_dir = "word-search/" if puzzle_type == 2 else "sudoku/"
-    for f in os.listdir("."):
-        if f.endswith('.svg'):
-            path = os.path.join(puzzle_dir, f)
-            os.remove(path)
+    
 
 def create_pdf_from_svgs(game_path,svg_files, output_filename):
     # Set up the PDF canvas
@@ -51,7 +46,7 @@ def create_pdf_from_svgs(game_path,svg_files, output_filename):
     for svg_file in svg_files:
         # Desired size for SVG in inches
         # Convert desired size to points (1 inch = 72 points)
-        if 'solution' in svg_file:
+        if game_path == "sudoku/" or 'solution' in svg_file:
             desired_width = 7 * 72
             desired_height = 10 * 72
         else:
@@ -78,7 +73,7 @@ def create_pdf_from_svgs(game_path,svg_files, output_filename):
         y = (height - drawing.height) / 2
 
         # Draw the SVG onto the canvas
-        if 'solution' in svg_file:
+        if game_path == "sudoku/" or 'solution' in svg_file:
             renderPDF.draw(drawing, c, x, 200)
         else:
             renderPDF.draw(drawing, c, x, -200)
@@ -133,6 +128,13 @@ def main():
     number_puzzles = args.number_puzzles
     word_search_size = args.word_search_size
     word_per_puzzle = args.word_per_puzzle
+
+    # rm all svg
+    puzzle_dir = "sudoku/" if puzzle_type == 1 else "word-search/"
+    for f in os.listdir(f"{puzzle_dir}"):
+        if f.endswith('.svg'):
+            path = os.path.join(f"{puzzle_dir}", f)
+            os.remove(path)
 
     # Run the puzzls maker script
     run_puzzle_maker(puzzle_type,number_puzzles,word_search_size,word_per_puzzle)
