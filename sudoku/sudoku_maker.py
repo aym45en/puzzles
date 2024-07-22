@@ -15,7 +15,7 @@ def check_for_valedty(grid,test,row,col):
                 return False
     return True
 
-# Function to create an empty grid of given size
+# Function to create a grid of given size
 def create_grid(size):
     while True:
         grid = [[' ' for _ in range(size)] for _ in range(size)]
@@ -23,11 +23,11 @@ def create_grid(size):
         num_numbers_to_have=0
         for i in range(0, 9, 3):
             for j in range(0, 9, 3):
-                # gah kayn nomber for box
-                num_cells_to_fill = 3
+                # gdah kayn nomber for box
+                num_cells_to_fill = 5
                 for x in range(3):
                     for y in range(3):
-                        if num_cells_to_fill > 0 and random.randint(1, 4)==1: #TODO : find solution better then random
+                        if num_cells_to_fill > 0 and random.randint(1, 2)==1: #TODO : find solution better then random
                             for k in range(100):
                                 test = random.randint(1, 9)
                                 if check_for_valedty(grid,test,i+x,j+y) :
