@@ -5,10 +5,7 @@ import svgwrite
 
 def check_for_valedty(grid,test,row,col):
     for i in range(9):
-        if test == grid[row][i]:
-            return False
-    for i in range(9):
-        if test == grid[i][col]:
+        if test == grid[row][i] or test == grid[i][col]:
             return False
     row = int(row/3)*3
     col = int(col/3)*3
@@ -20,21 +17,26 @@ def check_for_valedty(grid,test,row,col):
 
 # Function to create an empty grid of given size
 def create_grid(size):
-    grid = [[' ' for _ in range(size)] for _ in range(size)]
-    # Fill in the grid with random numbers
-    for i in range(0, 9, 3):
-        for j in range(0, 9, 3):
-            # gah kayn nomber for box
-            num_cells_to_fill = 3
-            for x in range(3):
-                for y in range(3):
-                    if num_cells_to_fill > 0 and random.randint(1, 4)==1: #TODO : find solution better then random
-                        for k in range(2):
-                            test = random.randint(1, 9)
-                            if check_for_valedty(grid,test,i+x,j+y) :
-                                grid[i+x][j+y] = test
-                                num_cells_to_fill -= 1
-                                break
+    while True:
+        grid = [[' ' for _ in range(size)] for _ in range(size)]
+        # Fill in the grid with random numbers
+        num_numbers_to_have=0
+        for i in range(0, 9, 3):
+            for j in range(0, 9, 3):
+                # gah kayn nomber for box
+                num_cells_to_fill = 3
+                for x in range(3):
+                    for y in range(3):
+                        if num_cells_to_fill > 0 and random.randint(1, 4)==1: #TODO : find solution better then random
+                            for k in range(100):
+                                test = random.randint(1, 9)
+                                if check_for_valedty(grid,test,i+x,j+y) :
+                                    grid[i+x][j+y] = test
+                                    num_cells_to_fill -= 1
+                                    num_numbers_to_have += 1
+                                    break
+        if num_numbers_to_have > 25 :
+            break
     return grid
 
 def solved_grid(grid):
@@ -50,6 +52,7 @@ def solved_grid(grid):
                         grid[i][j] = ' '
                 return None
     return grid
+
     
 # Function to create SVG of the grid with words
 def create_svg(grid, grid_size, output_file):
