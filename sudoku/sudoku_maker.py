@@ -1,3 +1,4 @@
+import argparse
 import copy
 import random
 import svgwrite
@@ -27,8 +28,8 @@ def create_grid(size):
             num_cells_to_fill = 3
             for x in range(3):
                 for y in range(3):
-                    if num_cells_to_fill > 0 and random.choice([True, False]): #TODO : find solution better then random
-                        while True :
+                    if num_cells_to_fill > 0 and random.randint(1, 4)==1: #TODO : find solution better then random
+                        for k in range(2):
                             test = random.randint(1, 9)
                             if check_for_valedty(grid,test,i+x,j+y) :
                                 grid[i+x][j+y] = test
@@ -118,10 +119,21 @@ def create_solution_svg(solution_grid, grid_size, output_file):
     dwg.save()
 
 def main():
+    parser = argparse.ArgumentParser(description='sudoku generator')
 
-    num_pages = int(input("Enter the number of the pages: "))
+    parser.add_argument(
+        '-n', '--number-puzzles',
+        type=int,
+        default=100,
+        help='Number of puzzles'
+    )
+
+    args = parser.parse_args()
+
+    number_puzzles = args.number_puzzles
+    
     attempt, successful_attempt= 0, 0
-    while successful_attempt <= num_pages:
+    while successful_attempt <= number_puzzles:
         grid = create_grid(9)
         copy_grid = copy.deepcopy(grid)
         grid_solved = solved_grid(copy_grid)
@@ -131,8 +143,8 @@ def main():
         if grid_solved is None:
             continue
         successful_attempt += 1
-        game_output_file = f'sudoku_game_{successful_attempt}.svg'
-        solution_output_file = f'sudoku_solution_{successful_attempt}.svg'
+        game_output_file = f'sudoku/sudoku_game_{successful_attempt}.svg'
+        solution_output_file = f'sudoku/sudoku_solution_{successful_attempt}.svg'
         create_svg(grid,9, game_output_file)
         create_solution_svg(grid_solved,9, solution_output_file)
 
