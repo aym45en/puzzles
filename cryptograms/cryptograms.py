@@ -9,8 +9,9 @@ def read_paragraphs(file_path):
     return paragraphs
 
 # trod bin 1 l 3 random letters
-def append_random_letters(letter):
-    for _ in range(random.randint(0, 2)):  # 1 to 3 times
+def append_random_letters():
+    letter = ''
+    for _ in range(random.randint(2, 3)):
         random_letter = random.choice(shuffled_letters)
         letter += random_letter
     return letter
@@ -38,7 +39,13 @@ while True:
             shuffled_letters1 = shuffled_letters[:]
             random.shuffle(shuffled_letters1)
             # tjib random letters wt7thm fi shuffled_letters
-            shuffled_letters1 = [append_random_letters(letter) for letter in shuffled_letters1]
+            for letter in range(len(shuffled_letters1)):
+                # check bah mijich key yt3awd martin
+                while True:
+                    append_random_letter = append_random_letters()
+                    if not any(append_random_letter in elem for elem in shuffled_letters1):
+                        shuffled_letters1[letter] = append_random_letter
+                        break
             key2 = dict(zip(shuffled_letters, shuffled_letters1))
             new_paraghraph1 = ''
             for l in range(len(new_paraghraph)):
@@ -52,7 +59,7 @@ while True:
                 game.write(f"{k}<={v} ")
             game.write(f"\n{new_paraghraph1}\n")
             for v, k in list(key2.items()):
-                game.write(f"{k}<={v} ")
+                game.write(f"{k}<={v}")
             game.write("\n\n")
         game.close()
         break
