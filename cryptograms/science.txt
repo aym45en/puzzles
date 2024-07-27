@@ -1,0 +1,66 @@
+Photosynthesis is the process by which green plants and some other organisms use sunlight to synthesize foods with carbon dioxide and water. It produces oxygen as a byproduct.
+Cellular respiration is the process in which cells convert glucose and oxygen into energy (ATP), carbon dioxide, and water.
+Deoxyribonucleic acid (DNA) is the molecule that carries genetic instructions used in growth, development, functioning, and reproduction of all living organisms.
+An atom is the basic unit of a chemical element, consisting of a nucleus of protons and neutrons, with electrons orbiting this nucleus.
+Evolution is the process through which species of organisms undergo genetic changes over time, leading to variations and the emergence of new species.
+The Big Bang Theory posits that the universe began from an extremely hot and dense state about 13.8 billion years ago and has been expanding ever since.
+Quantum mechanics is a fundamental theory in physics that describes nature at the smallest scales, such as particles like electrons and photons.
+Einstein's theory of relativity includes the special and general theories, which describe the relationship between space, time, and gravity.
+Black holes are regions of space where the gravitational pull is so strong that nothing, not even light, can escape from them.
+Climate change refers to significant changes in global temperatures and weather patterns over time, primarily due to human activities like burning fossil fuels.
+Plate tectonics is the theory explaining the movement of Earth's lithospheric plates, leading to earthquakes, volcanic activity, and continental drift.
+Genetics is the study of genes, genetic variation, and heredity in living organisms.
+Mitosis is the process of cell division that results in two genetically identical daughter cells from a single parent cell.
+Meiosis is a type of cell division that reduces the number of chromosomes by half, producing four genetically diverse gametes.
+Natural selection is the process by which organisms better adapted to their environment tend to survive and produce more offspring.
+The electromagnetic spectrum includes all types of electromagnetic radiation, from gamma rays to radio waves.
+Newton's laws describe the relationship between the motion of an object and the forces acting on it.
+Thermodynamics is the study of heat, energy, and the work done by them, governed by the laws of thermodynamics.
+An ecosystem is a community of living organisms interacting with their physical environment.
+Biodiversity refers to the variety and variability of life on Earth, encompassing different species, ecosystems, and genetic variations.
+Osmosis is the movement of water molecules through a selectively permeable membrane from an area of lower solute concentration to an area of higher solute concentration.
+Acids are substances that release hydrogen ions (H+) in solution, while bases release hydroxide ions (OH-).
+The general equation for photosynthesis is 6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂.
+Mendelian inheritance refers to the patterns of inheritance of traits discovered by Gregor Mendel, based on dominant and recessive alleles.
+Ribonucleic acid (RNA) is a molecule essential for various biological roles, including coding, decoding, regulation, and expression of genes.
+Fossil fuels, such as coal, oil, and natural gas, are energy sources formed from the remains of ancient plants and animals.
+A genetic mutation is a change in the DNA sequence that can lead to variations in traits and sometimes diseases.
+Symbiosis is a close and often long-term interaction between two different biological species.
+Antibiotics are substances used to kill or inhibit the growth of bacteria, helping to treat bacterial infections.
+Vaccination is the administration of a vaccine to stimulate an individual's immune system to develop adaptive immunity to a pathogen.
+Heredity is the passing of traits from parents to offspring through genes.
+CRISPR-Cas9 is a genetic engineering tool that allows for precise modifications to DNA in living organisms.
+Chromosomes are long strands of DNA wrapped around proteins, found in the nucleus of most living cells, carrying genetic information.
+Bacteria are single-celled microorganisms that can be found in various environments, some of which cause diseases.
+Viruses are small infectious agents that can only replicate inside the living cells of an organism.
+Enzymes are biological catalysts that speed up chemical reactions in living organisms.
+The light reactions of photosynthesis occur in the thylakoid membranes and convert solar energy into chemical energy in the form of ATP and NADPH.
+The Calvin cycle, occurring in the stroma of chloroplasts, uses ATP and NADPH to convert CO₂ into glucose.
+Adenosine triphosphate (ATP) is the primary energy carrier in cells.
+DNA replication is the process by which a DNA molecule makes a copy of itself.
+Transcription is the process in which a segment of DNA is copied into RNA by the enzyme RNA polymerase.
+Protein synthesis involves transcription and translation, where RNA is used to create proteins.
+Mitochondria are the powerhouses of the cell, generating most of the cell's supply of ATP through cellular respiration.
+Chloroplasts are organelles found in plant cells and some protists that conduct photosynthesis.
+Gene expression is the process by which the instructions in a gene are used to synthesize a functional gene product, usually a protein.
+Homeostasis is the ability of an organism to maintain a stable internal environment despite changes in external conditions.
+Eukaryotic cells are complex cells with a nucleus and membrane-bound organelles, found in animals, plants, fungi, and protists.
+Prokaryotic cells are simpler cells without a nucleus, including bacteria and archaea.
+Photosynthetic pigments, such as chlorophyll, absorb light energy used in photosynthesis.
+The endosymbiotic theory suggests that eukaryotic cells evolved from a symbiotic relationship between different species of prokaryotes.
+Genetic drift is a mechanism of evolution that involves random changes in the frequency of alleles in a population.
+Gene flow is the transfer of genetic variation from one population to another.
+Speciation is the process by which new distinct species arise.
+Ecosystem services are the benefits humans receive from ecosystems, including clean water, air, and pollination.
+Biogeochemical cycles describe the movements of elements like carbon, nitrogen, and phosphorus between living and non-living parts of ecosystems.
+The greenhouse effect is the warming of Earth's surface due to the trapping of heat by greenhouse gases in the atmosphere.
+Acid rain is precipitation with a lower pH than normal, caused by the release of sulfur dioxide and nitrogen oxides into the atmosphere.
+The ozone layer is a region of Earth's stratosphere that absorbs most of the Sun's ultraviolet radiation.
+Biodiversity hotspots are regions with a high level of endemic species that are under threat from human activities.
+Extinction is the end of an organism or a group of organisms, typically a species.
+Genetic engineering involves the direct manipulation of an organism's genome using biotechnology.
+Stem cells are undifferentiated cells with the potential to develop into different cell types.
+Bioluminescence is the production and emission of light by living organisms.
+The efficiency of photosynthesis is determined by how effectively plants convert light energy into chemical energy.
+Epigenetics is the study of heritable changes in gene expression that do not involve changes to the underlying DNA sequence.
+The microbiome is the collection of microorganisms living in and on the human body, playing crucial roles in health and disease.
