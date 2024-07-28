@@ -16,13 +16,13 @@ def append_random_letters():
         letter += random_letter
     return letter
 
-i = 0
-while True:
-    # check ida kayn file nkhdmo file khlaf 
-    if(os.path.exists(f'cryptograms/h{i}.txt')):
-        i += 1
-    else :
-        paragraphs = read_paragraphs('cryptograms/h.txt')
+for fileT in os.listdir('cryptograms'):
+    if fileT.endswith(".txt") and not fileT[:-4].isdigit():
+        fileT = os.path.splitext(fileT)[0]
+        i = 0
+        while os.path.exists(os.path.join('cryptograms',f'{fileT}{i}.txt')):
+            i += 1
+        paragraphs = read_paragraphs(os.path.join('cryptograms',f'{fileT}.txt'))
         normal_letters = list(string.ascii_uppercase)
         for p in range(len(paragraphs)):
             # 1st crypting
@@ -53,7 +53,7 @@ while True:
                     new_paraghraph1 += key2[new_paraghraph[l]]
                 else:
                     new_paraghraph1 += new_paraghraph[l]
-            game = open(f'cryptograms/h{i}.txt','a')
+            game = open(os.path.join('cryptograms',f'{fileT}{i}.txt'),'a')
             game.write(f"{paragraphs[p]}{new_paraghraph}\n")
             for v, k in list(key.items()):
                 game.write(f"{k}<={v} ")
@@ -62,4 +62,5 @@ while True:
                 game.write(f"{k}<={v} ")
             game.write("\n\n")
         game.close()
-        break
+        
+        

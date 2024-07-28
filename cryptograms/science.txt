@@ -20,7 +20,6 @@ An ecosystem is a community of living organisms interacting with their physical 
 Biodiversity refers to the variety and variability of life on Earth, encompassing different species, ecosystems, and genetic variations.
 Osmosis is the movement of water molecules through a selectively permeable membrane from an area of lower solute concentration to an area of higher solute concentration.
 Acids are substances that release hydrogen ions (H+) in solution, while bases release hydroxide ions (OH-).
-The general equation for photosynthesis is 6CO₂ + 6H₂O + light energy → C₆H₁₂O₆ + 6O₂.
 Mendelian inheritance refers to the patterns of inheritance of traits discovered by Gregor Mendel, based on dominant and recessive alleles.
 Ribonucleic acid (RNA) is a molecule essential for various biological roles, including coding, decoding, regulation, and expression of genes.
 Fossil fuels, such as coal, oil, and natural gas, are energy sources formed from the remains of ancient plants and animals.
