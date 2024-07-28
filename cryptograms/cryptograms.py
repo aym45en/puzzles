@@ -56,10 +56,10 @@ for fileT in os.listdir('cryptograms'):
             game = open(os.path.join('cryptograms',f'{fileT}{i}.txt'),'a')
             game.write(f"{paragraphs[p]}{new_paraghraph}\n")
             for v, k in list(key.items()):
-                game.write(f"{k}<={v} ")
+                game.write(f"{v}=>{k} ")
             game.write(f"\n{new_paraghraph1}\n")
             for v, k in list(key2.items()):
-                game.write(f"{k}<={v} ")
+                game.write(f"{v}=>{k} ")
             game.write("\n\n")
         game.close()
         
