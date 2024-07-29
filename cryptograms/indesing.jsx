@@ -10,9 +10,12 @@ function readFile(filePath) {
 }
 
 // Function to create a new text frame with specific text
-function createTextFrame(page, content, number, position, arialFont) {
+function createTextFrame(page, content, number, topPosition, arialFont, pageWidth, leftMargin, rightMargin) {
     var textFrame = page.textFrames.add();
-    textFrame.geometricBounds = position;
+    var frameHeight = 72; // Height of each text frame in points
+    var frameWidth = pageWidth - leftMargin - rightMargin; // Width of each text frame considering margins
+
+    textFrame.geometricBounds = [topPosition, leftMargin, topPosition + frameHeight, leftMargin + frameWidth];
     textFrame.contents = number + ' ' + content;
 
     // Center the text frame content
@@ -39,24 +42,30 @@ if (filePath !== null) {
     var pageHeight = 8.5 * 72; // 8.5 inches
 
     // Set up document preferences
-    doc.documentPreferences.pageWidth = pageWidth;
-    doc.documentPreferences.pageHeight = pageHeight;
-    doc.documentPreferences.facingPages = false;
+    with (doc.documentPreferences) {
+        pageWidth = 11 * 72; // 11 inches
+        pageHeight = 8.5 * 72; // 8.5 inches
+        facingPages = false;
+    }
 
     // Set margins
-    var insideMargin = 0.5 * 72; // 0.5 inch
-    var outsideMargin = 0.25 * 72; // 0.25 inch
-    doc.marginPreferences.top = insideMargin;
-    doc.marginPreferences.bottom = insideMargin;
-    doc.marginPreferences.left = insideMargin;
-    doc.marginPreferences.right = outsideMargin;
+    var topMargin = 0.5 * 72; // 0.5 inch
+    var bottomMargin = 0.5 * 72; // 0.5 inch
+    var leftMargin = 0.5 * 72; // 0.5 inch
+    var rightMargin = 0.25 * 72; // 0.25 inch
+    with (doc.marginPreferences) {
+        top = topMargin;
+        bottom = bottomMargin;
+        left = leftMargin;
+        right = rightMargin;
+    }
 
     // Set default language to English
     doc.textDefaults.appliedLanguage = "English: USA";
 
     var content = readFile(filePath).split('\n');
     var paragraphsPerPage = 4;
-    var verticalSpacing = (pageHeight - (insideMargin * 2)) / paragraphsPerPage;
+    var verticalSpacing = (pageHeight - topMargin - bottomMargin) / paragraphsPerPage;
 
     // Set default Arial font
     var arialFont = "Arial";
@@ -67,13 +76,8 @@ if (filePath !== null) {
         }
 
         var currentPage = doc.pages.item(Math.floor(i / paragraphsPerPage));
-        var position = [
-            insideMargin + (i % paragraphsPerPage) * verticalSpacing,
-            insideMargin,
-            insideMargin + ((i % paragraphsPerPage) + 1) * verticalSpacing,
-            pageWidth - outsideMargin
-        ];
+        var topPosition = topMargin + (i % paragraphsPerPage) * verticalSpacing;
 
-        createTextFrame(currentPage, content[i], (i + 1).toString(), position, arialFont);
+        createTextFrame(currentPage, content[i], (i + 1).toString(), topPosition, arialFont, pageWidth, leftMargin, rightMargin);
     }
 }
