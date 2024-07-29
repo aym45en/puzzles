@@ -38,27 +38,14 @@ function createTextFrame(page, content, number, topPosition, arialFont, pageWidt
 var filePath = File.openDialog("Select your text file", "*.txt");
 if (filePath !== null) {
     var doc = app.documents.add();
-    var pageWidth = 11 * 72; // 11 inches
-    var pageHeight = 8.5 * 72; // 8.5 inches
 
-    // Set up document preferences
-    with (doc.documentPreferences) {
-        pageWidth = 11 * 72; // 11 inches
-        pageHeight = 8.5 * 72; // 8.5 inches
-        facingPages = false;
-    }
-
-    // Set margins
-    var topMargin = 0.5 * 72; // 0.5 inch
-    var bottomMargin = 0.5 * 72; // 0.5 inch
-    var leftMargin = 0.5 * 72; // 0.5 inch
-    var rightMargin = 0.25 * 72; // 0.25 inch
-    with (doc.marginPreferences) {
-        top = topMargin;
-        bottom = bottomMargin;
-        left = leftMargin;
-        right = rightMargin;
-    }
+    // Assuming default page size and margins are already set in document preferences
+    var pageWidth = doc.documentPreferences.pageWidth;
+    var pageHeight = doc.documentPreferences.pageHeight;
+    var leftMargin = doc.marginPreferences.left;
+    var rightMargin = doc.marginPreferences.right;
+    var topMargin = doc.marginPreferences.top;
+    var bottomMargin = doc.marginPreferences.bottom;
 
     // Set default language to English
     doc.textDefaults.appliedLanguage = "English: USA";
