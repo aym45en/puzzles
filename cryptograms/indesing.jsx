@@ -10,7 +10,7 @@ function readFile(filePath) {
 }
 
 // Function to create a new text frame with specific text
-function createTextFrame(page, content, number, position) {
+function createTextFrame(page, content, number, position, arialFont) {
     var textFrame = page.textFrames.add();
     textFrame.geometricBounds = position;
     textFrame.contents = number + ' ' + content;
@@ -21,11 +21,14 @@ function createTextFrame(page, content, number, position) {
     // Apply paragraph style to make the number large and add space between lines
     var paragraph = textFrame.paragraphs.item(0);
     var firstWord = paragraph.words.item(0);
-    firstWord.pointSize = 24; // Adjust the size as needed
+    firstWord.pointSize = 48; // Adjust the size as needed
+    firstWord.fontStyle = "Bold"; // Make the number bold
 
-    // Apply paragraph alignment
+    // Apply paragraph alignment and set font and leading
     paragraph.justification = Justification.CENTER_ALIGN;
-    paragraph.leading = 24; // Add extra space between lines
+    paragraph.leading = 100; // Add extra space between lines
+    paragraph.appliedFont = arialFont;
+    paragraph.pointSize = 48;
 }
 
 // Main Script
@@ -48,9 +51,15 @@ if (filePath !== null) {
     doc.marginPreferences.left = insideMargin;
     doc.marginPreferences.right = outsideMargin;
 
+    // Set default language to English
+    doc.textDefaults.appliedLanguage = "English: USA";
+
     var content = readFile(filePath).split('\n');
     var paragraphsPerPage = 4;
     var verticalSpacing = (pageHeight - (insideMargin * 2)) / paragraphsPerPage;
+
+    // Set default Arial font
+    var arialFont = "Arial";
 
     for (var i = 0; i < content.length; i++) {
         if (i % paragraphsPerPage === 0 && i !== 0) {
@@ -65,6 +74,6 @@ if (filePath !== null) {
             pageWidth - outsideMargin
         ];
 
-        createTextFrame(currentPage, content[i], (i + 1).toString(), position);
+        createTextFrame(currentPage, content[i], (i + 1).toString(), position, arialFont);
     }
 }
