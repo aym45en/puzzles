@@ -16,7 +16,7 @@ function createTextFrame(page, content, number, topPosition, arialFont,verticalS
     var frameWidth = pageWidth - leftMargin - rightMargin; // Width of each text frame considering margins
 
     textFrame.geometricBounds = [topPosition, leftMargin, topPosition + frameHeight, leftMargin + frameWidth];
-    textFrame.contents = number + ' ' + content;
+    textFrame.contents = number + ". " + ' ' + content;
 
     // Center the text frame content
     textFrame.textFramePreferences.verticalJustification = VerticalJustification.CENTER_ALIGN;
@@ -29,8 +29,10 @@ function createTextFrame(page, content, number, topPosition, arialFont,verticalS
     // Apply paragraph alignment and set font and leading
     paragraph.justification = Justification.CENTER_ALIGN;
     paragraph.appliedFont = arialFont;
-    paragraph.leading = 32; // Add extra space between lines
-    paragraph.pointSize = 20;
+    paragraph.leading = 40; // Add extra space between lines
+    paragraph.pointSize = 16;
+    paragraph.hyphenation = false;
+
 }
 
 // Main Script
@@ -50,7 +52,7 @@ if (filePath !== null) {
     doc.textDefaults.appliedLanguage = "English: USA";
 
     var content = readFile(filePath).split('\n');
-    var paragraphsPerPage = 3;
+    var paragraphsPerPage = 2;
     var verticalSpacing = (pageHeight - topMargin - bottomMargin) / paragraphsPerPage;
 
     // Set default Arial font
