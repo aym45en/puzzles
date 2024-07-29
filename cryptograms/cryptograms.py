@@ -19,17 +19,24 @@ def append_keys(line):
             break
         # tna7i ay non alphabical char
         cleaned_word = re.sub(r'[^a-zA-Z]','',w)
-        if len(cleaned_word)<=3:
-            key.append(cleaned_word)
+        if len(cleaned_word)<=2:
+            # tvirifi ida kyn kach key rah deja kayn ida mknch dkhlo fl list key[]
+            if not any(cleaned_word in elem for elem in key):
+                key.append(cleaned_word)
         else:
             # ta9sm word b 3 letters
-            chunks = [cleaned_word[i:i+3] for i in range(0,len(cleaned_word),3)]
+            chunks = [cleaned_word[i:i+2] for i in range(0,len(cleaned_word),3)]
             # tvirifi ida kyn kach key rah deja kayn ida mknch dkhlo fl list key[]
             for char in chunks:
                 if not any(char in elem for elem in key):
                     key.extend(chunks)
     return key
-       
+# tnahi ls game li kaynin wdir jdod
+for f in os.listdir('cryptograms'):
+        if f.endswith(".txt") and f[-5].isdigit():
+            path = os.path.join('cryptograms', f)
+            os.remove(path)
+
 for fileTxT in os.listdir('cryptograms'):
     # t7aws 3la files li ikono .txt 
     if fileTxT.endswith(".txt") and not fileTxT[-5].isdigit():
@@ -41,7 +48,9 @@ for fileTxT in os.listdir('cryptograms'):
         paragraphs = read_paragraphs(os.path.join('cryptograms',f'{fileT}.txt'))
         normal_letters = list(string.ascii_uppercase)
         puzzle_per_fileT = 0
-        for p in range(len(paragraphs)):
+        game = open(os.path.join('cryptograms',f'{fileT}{i}.txt'),'a')
+        game.write(f"first paragraph to start is : {paragraphs[0]}")
+        for p in range(1,len(paragraphs)):
             # 1st crypting
             shuffled_letters = normal_letters[:]
             random.shuffle(shuffled_letters)
@@ -59,10 +68,10 @@ for fileTxT in os.listdir('cryptograms'):
             shuffled_letters_level2 = shuffled_letters[:]
             random.shuffle(shuffled_letters_level2)
             # tjib key mn jomla li 9bal letters wt7thm fi shuffled_letters_level2
-            shuffled_letters_level2 = append_keys(paragraphs[p])
+            shuffled_letters_level2 = append_keys(paragraphs[p-1])
             # tvirifi ida n9dro njbdo key mn paragraph
             if len(shuffled_letters_level2) < 26:
-                print(f"error in :{fileTxT} in paragraph {p+1} : {paragraphs[p]}") 
+                print(f"error in :{fileTxT} in paragraph {p} : {paragraphs[p-1]}") 
             else :
                 key2 = dict(zip(shuffled_letters, shuffled_letters_level2))
                 level_2_of_encryption = ''
@@ -71,16 +80,18 @@ for fileTxT in os.listdir('cryptograms'):
                         level_2_of_encryption += key2[level_1_of_encryption[l]]
                     else:
                         level_2_of_encryption += level_1_of_encryption[l]
-                game = open(os.path.join('cryptograms',f'{fileT}{i}.txt'),'a')
-                game.write(f"{paragraphs[p]}{level_1_of_encryption}\n")
+                game_sulition = open(os.path.join('cryptograms',f'{fileT}_sulition_{i}.txt'),'a')
+                game_sulition.write(f"{paragraphs[p]}{level_1_of_encryption}\n")
                 for v, k in list(key.items()):
-                    game.write(f"{v}=>{k} ")
-                game.write(f"\n{level_2_of_encryption}\n")
+                    game_sulition.write(f"{v}=>{k} ")
+                game_sulition.write("\n")
                 for v, k in list(key2.items()):
-                    game.write(f"{v}=>{k} ")
-                game.write("\n\n")
+                    game_sulition.write(f"{v}=>{k} ")
+                game_sulition.write("\n\n")
+                game_sulition.close()
+                game.write(f"{level_2_of_encryption}\n")
                 puzzle_per_fileT += 1
-                game.close()
         
+        game.close()
         print(f'by {fileTxT} we make {puzzle_per_fileT}')
         

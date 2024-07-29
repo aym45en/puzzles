@@ -10,9 +10,9 @@ function readFile(filePath) {
 }
 
 // Function to create a new text frame with specific text
-function createTextFrame(page, content, number, topPosition, arialFont, pageWidth, leftMargin, rightMargin) {
+function createTextFrame(page, content, number, topPosition, arialFont,verticalSpacing, pageWidth, leftMargin, rightMargin) {
     var textFrame = page.textFrames.add();
-    var frameHeight = 72; // Height of each text frame in points
+    var frameHeight = verticalSpacing; // Height of each text frame in points
     var frameWidth = pageWidth - leftMargin - rightMargin; // Width of each text frame considering margins
 
     textFrame.geometricBounds = [topPosition, leftMargin, topPosition + frameHeight, leftMargin + frameWidth];
@@ -24,14 +24,13 @@ function createTextFrame(page, content, number, topPosition, arialFont, pageWidt
     // Apply paragraph style to make the number large and add space between lines
     var paragraph = textFrame.paragraphs.item(0);
     var firstWord = paragraph.words.item(0);
-    firstWord.pointSize = 48; // Adjust the size as needed
     firstWord.fontStyle = "Bold"; // Make the number bold
 
     // Apply paragraph alignment and set font and leading
     paragraph.justification = Justification.CENTER_ALIGN;
-    paragraph.leading = 100; // Add extra space between lines
     paragraph.appliedFont = arialFont;
-    paragraph.pointSize = 48;
+    paragraph.leading = 32; // Add extra space between lines
+    paragraph.pointSize = 20;
 }
 
 // Main Script
@@ -51,7 +50,7 @@ if (filePath !== null) {
     doc.textDefaults.appliedLanguage = "English: USA";
 
     var content = readFile(filePath).split('\n');
-    var paragraphsPerPage = 4;
+    var paragraphsPerPage = 3;
     var verticalSpacing = (pageHeight - topMargin - bottomMargin) / paragraphsPerPage;
 
     // Set default Arial font
@@ -65,6 +64,6 @@ if (filePath !== null) {
         var currentPage = doc.pages.item(Math.floor(i / paragraphsPerPage));
         var topPosition = topMargin + (i % paragraphsPerPage) * verticalSpacing;
 
-        createTextFrame(currentPage, content[i], (i + 1).toString(), topPosition, arialFont, pageWidth, leftMargin, rightMargin);
+        createTextFrame(currentPage, content[i], (i + 1).toString(), topPosition, arialFont, verticalSpacing, pageWidth, leftMargin, rightMargin);
     }
 }
