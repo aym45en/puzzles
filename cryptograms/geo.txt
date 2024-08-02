@@ -1,50 +1,50 @@
-Mount Everest, the highest peak in the world, stands at 8,848 meters (29,029 feet) above sea level, located in the Himalayas on the border between Nepal and China.
-Amazon River, the second longest river in the world, flows through South America and is known for its vast drainage basin and biodiversity.
-Sahara Desert, the largest hot desert in the world, spans across North Africa, covering an area of 9.2 million square kilometers.
-Great Barrier Reef, the largest coral reef system, lies off the coast of Queensland, Australia, and consists of over 2,900 individual reefs.
-Andes Mountains, the longest mountain range, stretches along the western coast of South America, spanning seven countries.
-Lake Baikal, the deepest freshwater lake, is located in Siberia, Russia, and holds about 20% of the world's unfrozen freshwater.
-Ganges River, considered sacred in Hinduism, flows through India and Bangladesh, providing water to one of the world's most densely populated regions.
-Grand Canyon, a significant geological feature, is located in Arizona, USA, and was carved by the Colorado River over millions of years.
-Amazon Rainforest, the largest tropical rainforest, covers much of the Amazon Basin in South America and is crucial for global biodiversity and climate regulation.
-Ring of Fire, a major area in the Pacific Ocean basin, is known for its frequent earthquakes and volcanic eruptions due to tectonic activity.
-Nile River, the longest river in the world, flows northward through northeastern Africa, providing vital resources to Egypt and Sudan.
-Himalayas, a mountain range in Asia, houses many of the world's highest peaks, including Mount Everest and K2.
-Dead Sea, a salt lake bordering Jordan and Israel, is one of the world's saltiest bodies of water and lies at the lowest land elevation on Earth.
-Great Wall of China, an ancient series of fortifications, stretches over 13,000 miles and was built to protect against invasions.
-Greenland, the world's largest island, is an autonomous territory within the Kingdom of Denmark and is known for its vast ice sheets.
-Amazon Basin, a region in South America, is characterized by its extensive rainforest and river system, crucial for global water cycles and climate.
-Victoria Falls, one of the largest and most famous waterfalls, is located on the Zambezi River at the border between Zambia and Zimbabwe.
-Ural Mountains, running from north to south through western Russia, form a natural boundary between Europe and Asia.
 Atacama Desert, one of the driest places on Earth, stretches along the Pacific coast of Chile and Peru.
-Mediterranean Sea, bordered by Europe, Africa, and Asia, is a critical waterway for trade, cultural exchange, and biodiversity.
-Tibetan Plateau, often called "the Roof of the World," is the world's highest and largest plateau, located in Central Asia.
-Mariana Trench, the deepest part of the world's oceans, is located in the western Pacific Ocean and reaches a depth of about 36,000 feet.
-Great Plains, a vast flatland in North America, extends from Canada to Texas and is known for its agricultural productivity.
-Fjords of Norway, formed by glacial activity, are deep, narrow inlets with steep sides or cliffs, creating stunning landscapes.
-Amazon Basin, home to diverse ecosystems, includes the world's largest tropical rainforest and the vast Amazon River system.
-Sahara Desert, covering much of North Africa, is known for its extreme temperatures and unique ecosystems adapted to arid conditions.
-Congo River Basin, the second-largest river basin in the world, supports dense tropical rainforests and a rich variety of wildlife.
-Himalayas, stretching across five countries, are home to many of the world's highest peaks and diverse cultural and biological richness.
-Great Rift Valley, a continuous geographic trench, runs from Lebanon's Beqaa Valley to Mozambique, formed by tectonic activity.
+Himalayas, a mountain range in Asia, houses many of the world's highest peaks, including Mount Everest and K2.
+Ural Mountains, running from north to south through western Russia, form a natural boundary between Europe and Asia.
 Madagascar, an island nation off the southeastern coast of Africa, is renowned for its unique wildlife and biodiversity.
+Andes Mountains, the longest mountain range, stretches along the western coast of South America, spanning seven countries.
 Alps, a major mountain range in Europe, spans across eight countries and is known for its scenic beauty and winter sports.
+Tibetan Plateau, often called "the Roof of the World," is the world's highest and largest plateau, located in Central Asia.
+Great Plains, a vast flatland in North America, extends from Canada to Texas and is known for its agricultural productivity.
+Amazon Basin, home to diverse ecosystems, includes the world's largest tropical rainforest and the vast Amazon River system.
+Patagonian Steppe, a vast semi-arid plateau in southern Argentina and Chile, is known for its unique landscapes and wildlife.
+Kalahari Desert, spanning Botswana, Namibia, and South Africa, is known for its semi-arid climate and unique flora and fauna.
+Mediterranean Sea, bordered by Europe, Africa, and Asia, is a critical waterway for trade, cultural exchange, and biodiversity.
+Fjords of Norway, formed by glacial activity, are deep, narrow inlets with steep sides or cliffs, creating stunning landscapes.
+Great Rift Valley, a continuous geographic trench, runs from Lebanon's Beqaa Valley to Mozambique, formed by tectonic activity.
+Lake Baikal, the deepest freshwater lake, is located in Siberia, Russia, and holds about 20% of the world's unfrozen freshwater.
+Sahara Desert, the largest hot desert in the world, spans across North Africa, covering an area of 9.2 million square kilometers.
+Great Wall of China, an ancient series of fortifications, stretches over 13,000 miles and was built to protect against invasions.
+Deccan Plateau, covering much of southern India, is a large, elevated area known for its rich volcanic soil and cultural heritage.
+Congo River Basin, the second-largest river basin in the world, supports dense tropical rainforests and a rich variety of wildlife.
+Greenland, the world's largest island, is an autonomous territory within the Kingdom of Denmark and is known for its vast ice sheets.
+Sahara Desert, covering much of North Africa, is known for its extreme temperatures and unique ecosystems adapted to arid conditions.
+Baltic Sea, bordered by several Northern European countries, is an important body of water for trade, fishing, and cultural exchange.
+Nile River, the longest river in the world, flows northward through northeastern Africa, providing vital resources to Egypt and Sudan.
+Grand Canyon, a significant geological feature, is located in Arizona, USA, and was carved by the Colorado River over millions of years.
+Himalayas, stretching across five countries, are home to many of the world's highest peaks and diverse cultural and biological richness.
+Victoria Falls, one of the largest and most famous waterfalls, is located on the Zambezi River at the border between Zambia and Zimbabwe.
+Mariana Trench, the deepest part of the world's oceans, is located in the western Pacific Ocean and reaches a depth of about 36,000 feet.
+Andes, the longest continental mountain range, are known for their diverse climates, ecosystems, and ancient civilizations like the Inca.
+Amazon River, the second longest river in the world, flows through South America and is known for its vast drainage basin and biodiversity.
+Great Barrier Reef, the largest coral reef system, lies off the coast of Queensland, Australia, and consists of over 2,900 individual reefs.
+Bay of Bengal, the northeastern part of the Indian Ocean, is the largest bay in the world and is bordered by India, Bangladesh, and Myanmar.
+Ring of Fire, a major area in the Pacific Ocean basin, is known for its frequent earthquakes and volcanic eruptions due to tectonic activity.
+Great Dividing Range, Australia's longest mountain range, runs along the eastern coast and influences the climate and hydrology of the region.
+Great Victoria Desert, the largest desert in Australia, covers parts of Western Australia and South Australia and is known for its arid climate.
+Rockies, a major mountain range in western North America, extend from Canada to New Mexico, offering stunning landscapes and outdoor recreation.
+Dead Sea, a salt lake bordering Jordan and Israel, is one of the world's saltiest bodies of water and lies at the lowest land elevation on Earth.
+Serengeti Plain, located in Tanzania, is famous for its annual migration of over 1.5 million wildebeest and hundreds of thousands of other animals.
+Amazon Basin, a region in South America, is characterized by its extensive rainforest and river system, crucial for global water cycles and climate.
+Appalachian Mountains, a mountain range in eastern North America, stretch from Canada to Alabama and are rich in natural resources and biodiversity.
+Danube River, Europe's second-longest river, flows through ten countries, providing important waterway connections and supporting diverse ecosystems.
+Ganges River, considered sacred in Hinduism, flows through India and Bangladesh, providing water to one of the world's most densely populated regions.
+Alps, a prominent European mountain range, offer diverse landscapes, rich cultural history, and are a popular destination for skiing and mountaineering.
+Yucatán Peninsula, separating the Gulf of Mexico from the Caribbean Sea, is famous for its Mayan ruins and cenotes, natural sinkholes filled with water.
+Lake Superior, the largest of the Great Lakes, is the largest freshwater lake by surface area in the world and is shared by Canada and the United States.
+Lake Tanganyika, one of the African Great Lakes, is the world's second-oldest and second-deepest freshwater lake, supporting a rich variety of aquatic life.
+Mekong River, one of the world's longest rivers, flows through six countries in Southeast Asia and is vital for agriculture, transportation, and biodiversity.
+Mount Everest, the highest peak in the world, stands at 8,848 meters (29,029 feet) above sea level, located in the Himalayas on the border between Nepal and China.
+Amazon Rainforest, the largest tropical rainforest, covers much of the Amazon Basin in South America and is crucial for global biodiversity and climate regulation.
 Mississippi River, the second-longest river in North America, flows from northern Minnesota to the Gulf of Mexico, playing a vital role in the economy and ecology of the region.
 Galápagos Islands, an archipelago in the Pacific Ocean, are famous for their unique wildlife and were studied by Charles Darwin during the development of his theory of evolution.
-Great Victoria Desert, the largest desert in Australia, covers parts of Western Australia and South Australia and is known for its arid climate.
-Danube River, Europe's second-longest river, flows through ten countries, providing important waterway connections and supporting diverse ecosystems.
-Appalachian Mountains, a mountain range in eastern North America, stretch from Canada to Alabama and are rich in natural resources and biodiversity.
-Serengeti Plain, located in Tanzania, is famous for its annual migration of over 1.5 million wildebeest and hundreds of thousands of other animals.
-Patagonian Steppe, a vast semi-arid plateau in southern Argentina and Chile, is known for its unique landscapes and wildlife.
-Yucatán Peninsula, separating the Gulf of Mexico from the Caribbean Sea, is famous for its Mayan ruins and cenotes, natural sinkholes filled with water.
-Baltic Sea, bordered by several Northern European countries, is an important body of water for trade, fishing, and cultural exchange.
-Rockies, a major mountain range in western North America, extend from Canada to New Mexico, offering stunning landscapes and outdoor recreation.
-Deccan Plateau, covering much of southern India, is a large, elevated area known for its rich volcanic soil and cultural heritage.
-Lake Superior, the largest of the Great Lakes, is the largest freshwater lake by surface area in the world and is shared by Canada and the United States.
-Bay of Bengal, the northeastern part of the Indian Ocean, is the largest bay in the world and is bordered by India, Bangladesh, and Myanmar.
-Andes, the longest continental mountain range, are known for their diverse climates, ecosystems, and ancient civilizations like the Inca.
-Kalahari Desert, spanning Botswana, Namibia, and South Africa, is known for its semi-arid climate and unique flora and fauna.
-Alps, a prominent European mountain range, offer diverse landscapes, rich cultural history, and are a popular destination for skiing and mountaineering.
-Mekong River, one of the world's longest rivers, flows through six countries in Southeast Asia and is vital for agriculture, transportation, and biodiversity.
-Lake Tanganyika, one of the African Great Lakes, is the world's second-oldest and second-deepest freshwater lake, supporting a rich variety of aquatic life.
-Great Dividing Range, Australia's longest mountain range, runs along the eastern coast and influences the climate and hydrology of the region.
