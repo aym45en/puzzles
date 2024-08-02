@@ -4,6 +4,50 @@ import re
 import random
 import string
 
+# before start sort paragraphs
+def sort_lines_by_length(input_file ):
+    with open(input_file, 'r') as f_in:
+        lines = [line.strip() for line in f_in.readlines()]
+
+    lines.sort(key=len)
+
+    with open(input_file, 'w') as f_out:
+        for line in lines:
+            f_out.write(line + '\n')
+
+# tvirifi ida n9dro njbdo key mn paragraph
+def check_paragraph_for_key(p):
+    if len(append_keys(p)) < 26:
+        error_file = open(os.path.join('cryptograms',f'error.txt'),'a')
+        error_file.write(f"error 'key < 26' in :{fileTxT} in paragraph : {p}") 
+        error_file.close()
+        return True
+    else:
+        return False
+
+# check ida paragraph tji fi 6 stor
+def count_lines(paragraph, line_width):
+    words = paragraph.split()
+    lines = 0
+    current_line_length = 0
+
+    for word in words:
+        if current_line_length + len(word) <= line_width:
+            current_line_length += len(word) + 1 # +1 for the space
+        else:
+            lines += 1
+            current_line_length = len(word) + 1
+    
+    # Add the last line if there are remaining words
+    if current_line_length > 0:
+        lines += 1
+    
+    return lines
+
+def check_paragraph(paragraph, line_width, max_lines):
+    # num_lines = count_lines(paragraph, line_width)
+    return 1==1
+
 # Function to read paragraphs from a file
 def read_paragraphs(file_path):
     with open(file_path, 'r') as file:
@@ -33,7 +77,7 @@ def append_keys(line):
     return key
 # tnahi ls game li kaynin wdir jdod
 for f in os.listdir('cryptograms'):
-        if f.endswith(".txt") and f[-5].isdigit():
+        if (f.endswith(".txt") and f[-5].isdigit() ) or f == 'error.txt':
             path = os.path.join('cryptograms', f)
             os.remove(path)
 
@@ -45,12 +89,19 @@ for fileTxT in os.listdir('cryptograms'):
         i = 0
         while os.path.exists(os.path.join('cryptograms',f'{fileT}{i}.txt')):
             i += 1
+        sort_lines_by_length(os.path.join('cryptograms',f'{fileT}.txt'))
         paragraphs = read_paragraphs(os.path.join('cryptograms',f'{fileT}.txt'))
         normal_letters = list(string.ascii_uppercase)
         puzzle_per_fileT = 0
         game = open(os.path.join('cryptograms',f'{fileT}{i}.txt'),'a')
         game.write(f"first paragraph to start is : {paragraphs[0]}")
-        for p in range(1,len(paragraphs)):
+        p=0
+        while check_paragraph_for_key(paragraphs[p]):
+                del paragraphs[p]
+        while p<len(paragraphs):
+            if check_paragraph_for_key(paragraphs[p]):
+                del paragraphs[p]
+                continue
             # 1st crypting
             shuffled_letters = normal_letters[:]
             random.shuffle(shuffled_letters)
@@ -65,21 +116,19 @@ for fileTxT in os.listdir('cryptograms'):
                 else:
                     level_1_of_encryption += paragraphs[p][l]
             # 2nd crypting
-            shuffled_letters_level2 = shuffled_letters[:]
-            random.shuffle(shuffled_letters_level2)
             # tjib key mn jomla li 9bal letters wt7thm fi shuffled_letters_level2
             shuffled_letters_level2 = append_keys(paragraphs[p-1])
-            # tvirifi ida n9dro njbdo key mn paragraph
-            if len(shuffled_letters_level2) < 26:
-                print(f"error in :{fileTxT} in paragraph {p} : {paragraphs[p-1]}") 
-            else :
-                key2 = dict(zip(shuffled_letters, shuffled_letters_level2))
-                level_2_of_encryption = ''
-                for l in range(len(level_1_of_encryption)):
-                    if level_1_of_encryption[l] in string.ascii_uppercase:
-                        level_2_of_encryption += key2[level_1_of_encryption[l]]
-                    else:
-                        level_2_of_encryption += level_1_of_encryption[l]
+            key2 = dict(zip(shuffled_letters, shuffled_letters_level2))
+            level_2_of_encryption = ''
+            for l in range(len(level_1_of_encryption)):
+                if level_1_of_encryption[l] in string.ascii_uppercase:
+                    level_2_of_encryption += key2[level_1_of_encryption[l]]
+                else:
+                    level_2_of_encryption += level_1_of_encryption[l]
+            # check ida level 2 iji mrigl ki nhatoh fi pdf
+            line_width = 50 # Adjust based on your actual line width
+            max_lines = 6
+            if check_paragraph(level_2_of_encryption, line_width, max_lines) :
                 game_sulition = open(os.path.join('cryptograms',f'{fileT}_sulition_{i}.txt'),'a')
                 game_sulition.write(f"{paragraphs[p]}{level_1_of_encryption}\n")
                 for v, k in list(key.items()):
@@ -91,7 +140,13 @@ for fileTxT in os.listdir('cryptograms'):
                 game_sulition.close()
                 game.write(f"{level_2_of_encryption}\n")
                 puzzle_per_fileT += 1
-        
+                p += 1
+            else :
+                error_file = open(os.path.join('cryptograms',f'error.txt'),'a')
+                error_file.write(f"error 'paragraph > {max_lines} lins' in :{fileTxT} in paragraph : {paragraphs[p]}") 
+                error_file.close()
+                del paragraphs[p]
         game.close()
+
         print(f'by {fileTxT} we make {puzzle_per_fileT}')
         

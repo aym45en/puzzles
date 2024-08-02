@@ -52,7 +52,7 @@ if (filePath !== null) {
     doc.textDefaults.appliedLanguage = "English: USA";
 
     var content = readFile(filePath).split('\n');
-    var paragraphsPerPage = 2;
+    var paragraphsPerPage = 3;
     var verticalSpacing = (pageHeight - topMargin - bottomMargin) / paragraphsPerPage;
 
     // Set default Arial font
