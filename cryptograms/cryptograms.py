@@ -69,8 +69,7 @@ for fileTxT in os.listdir('cryptograms'):
         sort_lines_by_length(os.path.join('cryptograms',f'{fileT}.txt'))
         paragraphs = read_paragraphs(os.path.join('cryptograms',f'{fileT}.txt'))
         normal_letters = list(string.ascii_uppercase)
-        game = open(os.path.join('cryptograms',f'{fileT}_45.txt'),'a')
-        
+
         for p in range(len(paragraphs)):
             # 1st crypting
             shuffled_letters = normal_letters[:]
@@ -95,13 +94,11 @@ for fileTxT in os.listdir('cryptograms'):
             else :
                 level_2_of_encryption = enigma_encrypt(level_1_of_encryption, "K")
             
-            game_sulition = open(os.path.join('cryptograms',f'{fileT}_sulition_45.txt'),'a')
-            game_sulition.write(f"{paragraphs[p]}{level_1_of_encryption}\n")
-            for v, k in list(key.items()):
-                game_sulition.write(f"{v}=>{k} ")
-            game_sulition.write("\n\n")
-            game_sulition.close()
+            game = open(os.path.join('cryptograms',f'{fileT}_45.txt'),'a')
+            game_solution = open(os.path.join('cryptograms',f'{fileT}_solution_45.txt'),'a')
+            game_solution.write(f"{level_1_of_encryption}\n@{paragraphs[p]}\n")
+            game_solution.close()
 
             game.write(f"{level_2_of_encryption}\n")
-        game.close()
+            game.close()
         
